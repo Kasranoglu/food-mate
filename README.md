@@ -15,6 +15,10 @@ FoodMate is a web application built using Django Rest Framework and Python. The 
   - Recipe ingredients can be automatically added to the shopping cart.
   - Users can manually add items to the shopping list.
 
+- **Admin Panel:**
+  - Admin can use admin panel which django provides, so you can manually manipulate everything from there.
+
+
 ## Setup
 
 1. **Clone the repository:**
