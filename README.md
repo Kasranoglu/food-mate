@@ -1,27 +1,28 @@
 # FoodMate
 
-FoodMate, Django Rest Framework ve Python kullanılarak geliştirilen bir yemek tarifleri web uygulamasıdır. Uygulama, kullanıcıların tarifler oluşturmasına, alışveriş sepeti oluşturarak tarif malzemelerini eklemesine ve manuel olarak alışveriş listesine ürünler eklemesine olanak tanır.
+FoodMate is a web application built using Django Rest Framework and Python. The app allows users to browse and add recipes, manage a shopping cart, and manually add items to a shopping list.
 
-## Özellikler
+## Features
 
-•⁠  ⁠*Kullanıcı Kayıt ve Giriş:*
-  - Kullanıcılar sisteme kayıt olabilir ve giriş yapabilir.
+- **User Registration and Login:**
+  - Users can register and log in to the system.
   
-•⁠  ⁠*Tarifler:*
-  - Kullanıcılar mevcut tarifleri görüntüleyebilir.
-  - Kendi tariflerini ekleyebilir ve paylaşabilirler.
+- **Recipes:**
+  - Users can view existing recipes.
+  - Users can add and share their own recipes.
   
-•⁠  ⁠*Alışveriş Sepeti:*
-  - Tariflerdeki malzemeler otomatik olarak alışveriş sepetine eklenebilir.
-  - Kullanıcılar alışveriş listesine manuel olarak ürün ekleyebilir.
+- **Shopping Cart:**
+  - Recipe ingredients can be automatically added to the shopping cart.
+  - Users can manually add items to the shopping list.
 
-## Kurulum
+## Setup
 
-1.⁠ ⁠*Depoyu klonlayın:*
+1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/kullaniciadiniz/foodmate.git
+   git clone https://github.com/yourusername/foodmate.git
    cd foodmate
+
 
 python3 -m venv venv
 source venv/bin/activate
