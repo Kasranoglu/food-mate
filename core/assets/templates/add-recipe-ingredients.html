@@ -1,0 +1,73 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="container mt-5" style="margin-bottom: 20px">
+
+{#        <<-----     Malzeme tablosu     ----->>#}
+
+        <div class="row mb-3">
+        <div class="col">
+            <h3>Eklenen Malzemeler</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Malzeme</th>
+                        <th scope="col">Birim</th>
+                        <th scope="col">Miktar</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ingredient in ingredients %}
+                        <tr>
+                            <td>{{ ingredient.ingredients }}</td>
+                            <td>{{ ingredient.unit }}</td>
+                            <td>{{ ingredient.quantity }}</td>
+                            <td><form name="sil" action="" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="ingredient_id" value="{{ ingredient.id }}">
+                                    <button name="sil" type="submit" class="btn btn-danger btn-sm">Sil</button>
+                                </form></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{#        <<-----     Malzeme tablosu     ----->>#}
+
+        <form enctype="multipart/form-data" method="post" action="">
+            {% csrf_token %}
+            <div class="row mb-3">
+                <div class="col">
+            <label for="id_quantity" class="form-label">Malzeme:</label>
+            <input type="text" class="form-control" id="custom_ingredient" name="custom_ingredient" placeholder="Patates" required>
+        </div>
+        <div class="col">
+            <label for="id_unit" class="form-label">Birim:</label>
+            <select class="form-select" id="id_unit" name="unit" place required>
+                {% for units in unit %}
+                    <option value="{{ units.id }}">{{ units.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col">
+            <label for="id_quantity" class="form-label">Miktar:</label>
+            <input type="number" class="form-control" id="id_quantity" name="quantity" min="0" placeholder="Yalnızca sayı" required>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-danger">Malzemeyi ekle</button>
+        <button onclick="window.location.href = '{% url 'recipe details' slug=recipe.slug %}'" type="button" id="recipeDetailRedirect" class="btn btn-success">Malzemeler tamamlandı</button>
+
+</form>
+
+
+{% endblock %}
+
+
+
+
+
+

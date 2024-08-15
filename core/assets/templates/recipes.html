@@ -1,0 +1,51 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block title %}FoodMate | Recipes Page{% endblock title %}
+
+{% block content %}
+
+
+    <!-- Recipe Section Begin -->
+    <section class="recipe-section spad">
+        <div class="container">
+            <div class="row">
+                {% for item in items %}
+                <div class="col-lg-4 col-sm-6">
+                    <div class="recipe-item">
+                        <a href="{% url 'recipe details' slug=item.slug %}"><img src="{{ item.photo.url }}"
+                        alt="" width="350" height="233"></a>
+                        <div class="ri-text">
+                            <ul class="cat-name">
+                                <li>{{ item.get_all_categories_as_text }}</li>
+                                </ul>
+                            <a href="{% url 'recipe details' slug=item.slug %}">
+                                <h4>{{ item.name }}</h4>
+                            </a>
+                            <p>{{ item.description|slice:"151" }}...</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="recipe-pagination">
+                        {% if items.has_previous %}
+                        <a href="?page=1"><i class="fa fa-angle-double-left"></i></a>
+                        <a href="?page={{ items.previous_page_number }}">{{ items.previous_page_number }}</a>
+                        {% endif %}
+                        <a class="active" href="?page={{ items.number }}">{{ items.number }}</a>
+                         {% if items.has_next %}
+                             <a href="?page={{ items.next_page_number }}">{{ items.next_page_number }}</a>
+                             <a href="?page={{ items.paginator.num_pages }}"><i class="fa fa-angle-double-right"></i></a>
+                         {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Recipe Section End -->
+
+{% endblock content %}

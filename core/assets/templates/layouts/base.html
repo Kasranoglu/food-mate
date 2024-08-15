@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="tr">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yoga Studio Template">
+    <meta name="keywords" content="Yoga, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock title %}</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'web/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'web/css/nice-select.css'%}">
+    <link rel="stylesheet" href="{% static 'web/css/slicknav.min.css'%}">
+    <link rel="stylesheet" href="{% static 'web/css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'web/css/login.css'%}">
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'web/css/form.css'%}">
+    <link rel="stylesheet" href="{% static 'web/fontawesome-free-6.5.2-web/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'web/fontawesome-free-6.5.2-web/js/all.min.js' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'web/img/foodmatelogo.png' %}">
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section-other">
+        <div class="container-fluid">
+            <div class="logo">
+                <a href="{% url 'home' %}"><img src="{% static 'web/img/foodmatelogotext.png'%}" alt=""></a>
+            </div>
+            <div class="nav-menu">
+                <nav class="main-menu mobile-menu">
+                    {% if user.is_authenticated %}
+                        <ul>
+                        <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="#">Pages</a>
+                            <ul class="sub-menu">
+                                <li><a href="{% url 'about us' %}">About Us</a></li>
+                                <li><a href="{% url 'add recipe' %}">Add Recipe</a></li>
+                                <li><a href="{% url 'diet' %}">Diets</a></li>
+                                <li><a href="{% url 'shopping list' %}">Shopping List</a></li>
+                                <li><a href="{% url 'contact' %}">Contact</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'diet' %}">Diets</a></li>
+                        <li><a href="{% url 'recipes' %}">Recipes</a></li>
+                        <li><a href="{% url 'shopping list' %}">Shopping List</a></li>
+                        <li><a href="{% url 'profile page' %}">MyProfile</a></li>
+                    </ul>
+
+                    {% else %}
+
+                        <ul>
+                        <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="#">Pages</a>
+                            <ul class="sub-menu">
+                                <li><a href="{% url 'about us' %}">About Us</a></li>
+                                <li><a href="{% url 'recipes' %}">Recipes</a></li>
+                                <li><a href="{% url 'diet' %}">Diets</a></li>
+                                <li><a href="{% url 'shopping list' %}">Shopping List</a></li>
+                                <li><a href="{% url 'contact' %}">Contact</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'diet' %}">Diets</a></li>
+                        <li><a href="{% url 'recipes' %}">Recipes</a></li>
+                        <li><a href="{% url 'shopping list' %}">Shopping List</a></li>
+                        <li><a href="{% url 'signin' %}">SignIN/UP</a></li>
+                    </ul>
+
+
+                    {% endif %}
+
+
+
+
+                </nav>
+                <div class="nav-right search-switch">
+                    <i class="fa fa-search"></i>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Hero Search Section Begin -->
+    <div class="hero-search set-bg" data-setbg="{% static 'web/img/search-bg.jpg'%}">
+        <div class="container">
+            <div class="filter-table">
+                <form action="#" class="filter-search">
+                    <input type="text" placeholder="Search recipe">
+                    <select id="category">
+                        <option value="">Category</option>
+                    </select>
+                    <select id="tag">
+                        <option value="">Tags</option>
+                    </select>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Search Section End -->
+
+    {% block content %}{% endblock content %}
+
+
+ <!-- Similar Recipe Section Begin -->
+    <section class="similar-recipe spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="similar-item">
+                        <a href="#"><img src="{% static 'web/img/cat-feature/small-7.jpg'%}" alt=""></a>
+                        <div class="similar-text">
+                            <div class="cat-name">Vegan</div>
+                            <h6>Italian Tiramisu with Coffe</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="similar-item">
+                        <a href="#"><img src="{% static 'web/img/cat-feature/small-6.jpg'%}" alt=""></a>
+                        <div class="similar-text">
+                            <div class="cat-name">Vegan</div>
+                            <h6>Dry Cookies with Corn</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="similar-item">
+                        <a href="#"><img src="{% static 'web/img/cat-feature/small-5.jpg'%}" alt=""></a>
+                        <div class="similar-text">
+                            <div class="cat-name">Vegan</div>
+                            <h6>Asparagus with Pork Loin and Vegetables</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="similar-item">
+                        <a href="#"><img src="{% static 'web/img/cat-feature/small-4.jpg'%}" alt=""></a>
+                        <div class="similar-text">
+                            <div class="cat-name">Vegan</div>
+                            <h6>Smoked Salmon mini Sandwiches with Onion</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Similar Recipe Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="fs-left">
+                        <div class="logo">
+                            <a href="{% url 'home' %}">
+                                <img src="{% static 'web/img/footer-logo.png' %}" alt="">
+                            </a>
+                        </div>
+                        <p>
+                            <strong>FoodMate - Lezzetli Yemekler, Sağlıklı Yaşam</strong><br>
+                            E-posta: <a onmouseover="this.style.color='#720228';" onmouseout="this.style.color='#FC0254';" href="mailto:info@foodmate.com" style="color: #FC0254">info@foodmate.com</a> |
+                            Telefon: <a onmouseover="this.style.color='#720228';" onmouseout="this.style.color='#FC0254';" href="tel:+1234567890" style="color: #FC0254">+1234567890</a><br>
+                            Adres: <a onmouseover="this.style.color='#720228';" onmouseout="this.style.color='#FC0254';" href="https://www.google.com/maps/place/45.790313, -101.276047" target="_blank"
+                                      style="color: #FC0254">FoodMate Headquarters, 123 Yemek Yolu, Şehir, Ülke</a>
+                        </p>
+                        <p>&copy; 2024 FoodMate. Tüm hakları saklıdır.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 offset-lg-1">
+                    <form action="#" class="subscribe-form">
+                        <h3>Subscribe to our newsletter</h3>
+                        <input type="email" placeholder="Your e-mail">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a>
+                        <a href="#"><i class="fa-brands fa-pinterest"></i><span>Pinterest</span></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i><span>Facebook</span></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i><span>Twitter</span></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></i><span>Youtube</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .footer-section a:hover {
+            color: #ffffff; /* İstenilen açık renk */
+        }
+    </style>
+    <!-- Footer Section End -->
+
+    <!-- Search model -->
+	<div class="search-model">
+		<div class="h-100 d-flex align-items-center justify-content-center">
+			<div class="search-close-switch">+</div>
+			<form class="search-model-form">
+				<input type="text" id="search-input" placeholder="Search here.....">
+			</form>
+		</div>
+	</div>
+	<!-- Search model end -->
+
+{% include "layouts/scripts.html" %}
+
+</body>
+
+</html>

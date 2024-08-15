@@ -1,0 +1,42 @@
+{% load static %}
+
+<!-- Js Plugins -->
+    <script src="{% static 'web/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'web/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'web/js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'web/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'web/js/main.js' %}"></script>
+    <script src="{% static 'web/js/mixitup.min.js' %}"></script>
+    <script src="{% static 'web/js/login.js' %}"></script>
+
+
+<script>
+        var showSigninButton = document.getElementById("show-signin-form");
+        var showSignupButton = document.getElementById("show-signin-form");
+        showSignupButton.innerText = "Show Sign In Form";
+        showSignupButton.classList.add("main-button");
+
+        showSigninButton.addEventListener("click", function () {
+            var signupForm = document.getElementById("signup-form");
+            var signinForm = document.getElementById("signin-form");
+            var sidebarHeading = document.querySelector("#sidebar-text h2");
+
+
+            if (signinForm.style.display === "none") {
+                signinForm.style.display = "block";
+                signupForm.style.display = "none";
+                showSigninButton.innerText = "Show Sign Up Form";
+                sidebarHeading.innerText = "Sign In";
+
+            } else {
+                signinForm.style.display = "none";
+                signupForm.style.display = "block";
+                showSigninButton.innerText = "Show Sign In Form";
+                sidebarHeading.innerText = "Sign Up";
+            }
+        });
+
+        showSigninButton.parentNode.insertBefore(showSignupButton, showSigninButton.nextSibling);
+    </script>
+
+

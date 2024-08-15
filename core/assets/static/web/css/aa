@@ -1,0 +1,764 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+<div class="elfsight-app-c43e4659-5a91-4274-92a8-064cdc5081fe" data-elfsight-app-lazy></div>
+
+<div class="container mt-5" style="margin-bottom: 20px">
+   <form enctype="multipart/form-data" method="post" action="" novalidate>
+    {% csrf_token %}
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="id_name" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="id_name" name="name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="col-md-6">
+            <label for="id_photo" class="form-label">Photo:</label>
+            {{ form.photo }}
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="id_description" class="form-label">Description:</label>
+            {{ form.description }}
+        </div>
+        <div class="col-md-6">
+            <label for="id_how_to" class="form-label">How to:</label>
+            {{ form.how_to }}
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="id_cooking_time" class="form-label">Cooking Time:</label>
+            {{ form.cooking_time }}
+        </div>
+        <div class="col-md-6">
+            <label for="id_prep_time" class="form-label">Prep Time:</label>
+            {{ form.prep_time }}
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="id_categories" class="form-label">Categories:</label>
+            {{ form.categories }}
+        </div>
+        <div class="col-md-6">
+            <label for="id_special_types" class="form-label">Special Types:</label>
+            {{ form.special_types }}
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="id_tags" class="form-label">Tags:</label>
+            {{ form.tags }}
+        </div>
+        <div class="col-md-6">
+            <label for="id_meal_types" class="form-label">Meal Types:</label>
+            {{ form.meal_types }}
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="id_diet_types" class="form-label">Diet Types:</label>
+            {{ form.diet_types }}
+        </div>
+        <div class="col-md-6">
+            <label for="id_calorie" class="form-label">Calorie:</label>
+            {{ form.calorie }}
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="id_serving_size" class="form-label">Serving Size:</label>
+            {{ form.serving_size }}
+        </div>
+    </div>
+    <button type="submit" class="btn btn-danger">Bu Tarifi Ekle</button>
+</form>
+
+</div>
+{% endblock %}
+
+
+
+
+
+
+   /* <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core="" defer=""></script>
+<div class="elfsight-app-c43e4659-5a91-4274-92a8-064cdc5081fe eapps-widget eapps-widget-show-toolbar"
+     data-elfsight-app-lazy="">
+    <div id="eapps-form-builder-c43e4659-5a91-4274-92a8-064cdc5081fe"
+         class="RootLayout__RootComponent-sc-1doisyz-0 iGDhJF eapps-form-builder-c43e4659-5a91-4274-92a8-064cdc5081fe-custom-css-hook"
+         data-app="eapps-form-builder" data-app-version="1.25.12">
+        <div class="Content__WidgetContainer-sc-3sh3bs-2 eUMJuz">
+            <div class="WidgetBackground__Container-sc-1ho7q3r-0 iczPsf"
+                 style="border-radius: 0px; padding: 0px; min-height: 100%; box-shadow: none;">
+                <div class="Background__Container-sc-4lq1r6-0 iMxbAb" style="transition: none 0s ease 0s;">
+                    <div class="Background__Base-sc-4lq1r6-1 egiTHk"
+                         style="display: block; background-color: transparent; border-radius: 0px;"></div>
+                    <div class="Background__Overlay-sc-4lq1r6-2 djWGwD"
+                         style="display: block; background-color: rgba(255, 255, 255, 0);"></div>
+                </div>
+                <div class="WidgetBackground__ContentContainer-sc-1ho7q3r-1 kMBEgy">
+                    <div class="WidgetBackground__Content-sc-1ho7q3r-2 ciCnpO">
+                        <div class="Content__FormContainer-sc-3sh3bs-0 zBbTw">
+                            <div class="WidgetTitle__Container-sc-ruy1gu-0 jTFTDZ">
+                                <div class="WidgetTitle__Inner-sc-ruy1gu-1 SZtf">
+                                    <div class="WidgetTitle__Header-sc-ruy1gu-2 coQfSf">Student Application Form</div>
+                                    <div class="WidgetTitle__Caption-sc-ruy1gu-3 bKWjeO">Please complete the form below
+                                        to apply for the program.
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="FormLayout__Container-sc-2kg2eg-0 iNyYeg">
+                                <div class="FieldsGrid__Grid-sc-1luipcv-0 hCmtez">
+                                    <div class="FieldsGrid__Row-sc-1luipcv-1 gRPRAW">
+                                        <div class="FormFieldLayout__Container-sc-1m85c11-3 TdkWv FieldContainer__FieldLayout-sc-gwguj-0 jrogik">
+                                            <label for="wR5ZRKJT" class="FormFieldLayout__Label-sc-1m85c11-0 eJtSxb">Food
+                                                Name *</label><span
+                                                class="TextMeasure__TextMeasureComponent-sc-bpafkg-0 ePiSec"></span>
+                                            <div class="TextControlBase__TextControlBaseContainer-sc-1s66zih-0 bBKQWp"
+                                                 style="padding: 10px 15px; border-width: 1px; border-radius: 4px; font-style: normal; font-weight: normal; font-size: 15px; line-height: 20px; border-color: rgba(17, 17, 17, 0.2); background: rgba(17, 17, 17, 0.1); color: rgb(17, 17, 17); opacity: 1;">
+                                                <div class="TextControlBase__TextControlBaseInner-sc-1s66zih-1 cjvHgB">
+                                                    <div class="TextControlBase__TextControlBaseInputWrapper-sc-1s66zih-3 ckjMpy"
+                                                         style="opacity: 1; transform: none;">
+                                                        <div class="TextControlBase__TextControlBasePlaceholder-sc-1s66zih-8 CWjVC"
+                                                             style="font-style: normal; font-weight: 400; color: rgba(17, 17, 17, 0.45);">
+                                                            Enter food's name
+                                                        </div>
+                                                        <input id="wR5ZRKJT" aria-required="true"
+                                                               placeholder="Enter food's name" type="shortText"
+                                                               autocomplete="off"
+                                                               class="TextControlBase__TextControlBaseInput-sc-1s66zih-4 kJegGT"
+                                                               value=""></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="FieldsGrid__Row-sc-1luipcv-1 gRPRAW">
+                                        <div class="FormFieldLayout__Container-sc-1m85c11-3 iZShRb FieldContainer__FieldLayout-sc-gwguj-0 ezXPMK">
+                                            <label for="C86l0Fim" class="FormFieldLayout__Label-sc-1m85c11-0 eJtSxb">Upload
+                                                Food's Image *</label>
+                                            <div class="File__Hint-sc-1txm6db-1 fbyVYY">
+                                                <div>Attach your image in jpg format.</div>
+                                            </div>
+                                            <div class="File__Container-sc-1txm6db-2 bYMCsK">
+                                                <div class="File__DropArea-sc-1txm6db-5 hhzGQe"><input id="C86l0Fim"
+                                                                                                       title=""
+                                                                                                       type="file"
+                                                                                                       name="Upload Food's Image *"
+                                                                                                       multiple=""
+                                                                                                       accept=".jpg"
+                                                                                                       aria-required="true"
+                                                                                                       class="File__Input-sc-1txm6db-6 jMddqF">
+                                                    <div class="File__Text-sc-1txm6db-3 File__Link-sc-1txm6db-4 dzfVBZ jyBCWm">
+                                                        Choose file
+                                                    </div>
+                                                    <div class="File__Text-sc-1txm6db-3 hOEHkZ">or drop here</div>
+                                                </div>
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="FieldsGrid__Row-sc-1luipcv-1 gRPRAW">
+                                        <div class="FormFieldLayout__Container-sc-1m85c11-3 cDIlcj FieldContainer__FieldLayout-sc-gwguj-0 jrogik">
+                                            <label for="lvkzkgf2" class="FormFieldLayout__Label-sc-1m85c11-0 eJtSxb">Description </label><span
+                                                class="TextMeasure__TextMeasureComponent-sc-bpafkg-0 ePiSec"></span>
+                                            <div class="TextControlBase__TextControlBaseContainer-sc-1s66zih-0 bBKQWp LongText__LongTextControl-sc-j1m0eb-0 cFjkpg"
+                                                 style="padding: 10px 15px; border-width: 1px; border-radius: 4px; font-style: normal; font-weight: normal; font-size: 15px; line-height: 20px; border-color: rgba(17, 17, 17, 0.2); background: rgba(17, 17, 17, 0.1); color: rgb(17, 17, 17); opacity: 1;">
+                                                <div class="TextControlBase__TextControlBaseInner-sc-1s66zih-1 cjvHgB">
+                                                    <div class="TextControlBase__TextControlBaseInputWrapper-sc-1s66zih-3 ckjMpy"
+                                                         style="opacity: 1; transform: none;"><textarea id="lvkzkgf2"
+                                                                                                        aria-required="false"
+                                                                                                        placeholder=""
+                                                                                                        class="TextControlBase__TextControlBaseTextarea-sc-1s66zih-5 haCLZg"
+                                                                                                        style="height: 60px !important;"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="FieldsGrid__Row-sc-1luipcv-1 gRPRAW">
+                                        <div class="FormFieldLayout__Container-sc-1m85c11-3 cDIlcj FieldContainer__FieldLayout-sc-gwguj-0 jrogik">
+                                            <label for="lvkzle5y" class="FormFieldLayout__Label-sc-1m85c11-0 eJtSxb">How
+                                                to steps </label><span
+                                                class="TextMeasure__TextMeasureComponent-sc-bpafkg-0 ePiSec"></span>
+                                            <div class="TextControlBase__TextControlBaseContainer-sc-1s66zih-0 bBKQWp LongText__LongTextControl-sc-j1m0eb-0 cFjkpg"
+                                                 style="padding: 10px 15px; border-width: 1px; border-radius: 4px; font-style: normal; font-weight: normal; font-size: 15px; line-height: 20px; border-color: rgba(17, 17, 17, 0.2); background: rgba(17, 17, 17, 0.1); color: rgb(17, 17, 17); opacity: 1;">
+                                                <div class="TextControlBase__TextControlBaseInner-sc-1s66zih-1 cjvHgB">
+                                                    <div class="TextControlBase__TextControlBaseInputWrapper-sc-1s66zih-3 ckjMpy"
+                                                         style="opacity: 1; transform: none;"><textarea id="lvkzle5y"
+                                                                                                        aria-required="false"
+                                                                                                        placeholder=""
+                                                                                                        class="TextControlBase__TextControlBaseTextarea-sc-1s66zih-5 haCLZg"
+                                                                                                        style="height: 60px !important;"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="FieldsGrid__Row-sc-1luipcv-1 gRPRAW">
+                                        <div class="FormFieldLayout__Container-sc-1m85c11-3 cDIlcj FieldContainer__FieldLayout-sc-gwguj-0 jrogik">
+                                            <label for="lvkzqlkg" class="FormFieldLayout__Label-sc-1m85c11-0 eJtSxb">Categories
+                                                *</label>
+                                            <div class="choice__OptionsContainer-sc-1jj41hs-2 eKqndW"
+                                                 style="font-size: 15px; font-weight: normal; font-style: normal; color: rgb(17, 17, 17); grid-template-columns: 100%;">
+                                                <label class="choice-option__Label-sc-zyrt4i-0 cHDsud"><input
+                                                        id="yayuk8ve" type="checkbox" name="lvkzqlkg" required=""
+                                                        class="choice-option__Input-sc-zyrt4i-7 Wzyen" value="Option 1">
+                                                    <div class="choice-option__Container-sc-zyrt4i-1 kOrkiR">
+                                                        <div class="choice-option__Item-sc-zyrt4i-4 choice-option__ChoiceControl-sc-zyrt4i-6 dfrcBC fBeYtW">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                                <path fill-rule="evenodd"
+                                                                      d="M20.293 5.293a1 1 0 0 1 1.497 1.32l-.083.094L9.332 19.082a1 1 0 0 1-1.32.083l-.094-.083-5.625-5.625a1 1 0 0 1 1.32-1.497l.094.083 4.918 4.917L20.293 5.293Z"></path>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="choice-option__Overlay-sc-zyrt4i-2 lnIDrI"
+                                                             style="background-color: rgb(17, 17, 17);"></div>
+                                                    </div>
+                                                    <div class="choice-option__ItemLabel-sc-zyrt4i-3 bMhTrF"
+                                                         style="font-size: 15px; line-height: 24px; margin-left: 8px;">
+                                                        Option 1
+                                                    </div>
+                                                </label><label class="choice-option__Label-sc-zyrt4i-0 cHDsud"><input
+                                                    id="twjpfkt4" type="checkbox" name="lvkzqlkg" required=""
+                                                    class="choice-option__Input-sc-zyrt4i-7 Wzyen" value="Option 2">
+                                                <div class="choice-option__Container-sc-zyrt4i-1 kOrkiR">
+                                                    <div class="choice-option__Item-sc-zyrt4i-4 choice-option__ChoiceControl-sc-zyrt4i-6 dfrcBC fBeYtW">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                            <path fill-rule="evenodd"
+                                                                  d="M20.293 5.293a1 1 0 0 1 1.497 1.32l-.083.094L9.332 19.082a1 1 0 0 1-1.32.083l-.094-.083-5.625-5.625a1 1 0 0 1 1.32-1.497l.094.083 4.918 4.917L20.293 5.293Z"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="choice-option__Overlay-sc-zyrt4i-2 lnIDrI"
+                                                         style="background-color: rgb(17, 17, 17);"></div>
+                                                </div>
+                                                <div class="choice-option__ItemLabel-sc-zyrt4i-3 bMhTrF"
+                                                     style="font-size: 15px; line-height: 24px; margin-left: 8px;">
+                                                    Option 2
+                                                </div>
+                                            </label></div>
+                                        </div>
+                                    </div>
+                                    <div class="FieldsGrid__Row-sc-1luipcv-1 gRPRAW">
+                                        <div class="FormFieldLayout__Container-sc-1m85c11-3 cDIlcj FieldContainer__FieldLayout-sc-gwguj-0 jrogik">
+                                            <label for="lvkzvbem" class="FormFieldLayout__Label-sc-1m85c11-0 eJtSxb">Meal
+                                                Types *</label>
+                                            <div class="choice__OptionsContainer-sc-1jj41hs-2 eKqndW"
+                                                 style="font-size: 15px; font-weight: normal; font-style: normal; color: rgb(17, 17, 17); grid-template-columns: 100%;">
+                                                <label class="choice-option__Label-sc-zyrt4i-0 cHDsud"><input
+                                                        id="yayuk8ve" type="checkbox" name="lvkzvbem" required=""
+                                                        class="choice-option__Input-sc-zyrt4i-7 Wzyen"
+                                                        value="Breakfast">
+                                                    <div class="choice-option__Container-sc-zyrt4i-1 kOrkiR">
+                                                        <div class="choice-option__Item-sc-zyrt4i-4 choice-option__ChoiceControl-sc-zyrt4i-6 dfrcBC fBeYtW">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                                <path fill-rule="evenodd"
+                                                                      d="M20.293 5.293a1 1 0 0 1 1.497 1.32l-.083.094L9.332 19.082a1 1 0 0 1-1.32.083l-.094-.083-5.625-5.625a1 1 0 0 1 1.32-1.497l.094.083 4.918 4.917L20.293 5.293Z"></path>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="choice-option__Overlay-sc-zyrt4i-2 lnIDrI"
+                                                             style="background-color: rgb(17, 17, 17);"></div>
+                                                    </div>
+                                                    <div class="choice-option__ItemLabel-sc-zyrt4i-3 bMhTrF"
+                                                         style="font-size: 15px; line-height: 24px; margin-left: 8px;">
+                                                        Breakfast
+                                                    </div>
+                                                </label><label class="choice-option__Label-sc-zyrt4i-0 cHDsud"><input
+                                                    id="twjpfkt4" type="checkbox" name="lvkzvbem" required=""
+                                                    class="choice-option__Input-sc-zyrt4i-7 Wzyen" value="Lunch">
+                                                <div class="choice-option__Container-sc-zyrt4i-1 kOrkiR">
+                                                    <div class="choice-option__Item-sc-zyrt4i-4 choice-option__ChoiceControl-sc-zyrt4i-6 dfrcBC fBeYtW">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                            <path fill-rule="evenodd"
+                                                                  d="M20.293 5.293a1 1 0 0 1 1.497 1.32l-.083.094L9.332 19.082a1 1 0 0 1-1.32.083l-.094-.083-5.625-5.625a1 1 0 0 1 1.32-1.497l.094.083 4.918 4.917L20.293 5.293Z"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="choice-option__Overlay-sc-zyrt4i-2 lnIDrI"
+                                                         style="background-color: rgb(17, 17, 17);"></div>
+                                                </div>
+                                                <div class="choice-option__ItemLabel-sc-zyrt4i-3 bMhTrF"
+                                                     style="font-size: 15px; line-height: 24px; margin-left: 8px;">Lunch
+                                                </div>
+                                            </label><label class="choice-option__Label-sc-zyrt4i-0 cHDsud"><input
+                                                    id="lvkzx661" type="checkbox" name="lvkzvbem" required=""
+                                                    class="choice-option__Input-sc-zyrt4i-7 Wzyen" value="Dinner">
+                                                <div class="choice-option__Container-sc-zyrt4i-1 kOrkiR">
+                                                    <div class="choice-option__Item-sc-zyrt4i-4 choice-option__ChoiceControl-sc-zyrt4i-6 dfrcBC fBeYtW">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                            <path fill-rule="evenodd"
+                                                                  d="M20.293 5.293a1 1 0 0 1 1.497 1.32l-.083.094L9.332 19.082a1 1 0 0 1-1.32.083l-.094-.083-5.625-5.625a1 1 0 0 1 1.32-1.497l.094.083 4.918 4.917L20.293 5.293Z"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="choice-option__Overlay-sc-zyrt4i-2 lnIDrI"
+                                                         style="background-color: rgb(17, 17, 17);"></div>
+                                                </div>
+                                                <div class="choice-option__ItemLabel-sc-zyrt4i-3 bMhTrF"
+                                                     style="font-size: 15px; line-height: 24px; margin-left: 8px;">
+                                                    Dinner
+                                                </div>
+                                            </label></div>
+                                        </div>
+                                    </div>
+                                    <div class="FieldsGrid__Row-sc-1luipcv-1 gRPRAW">
+                                        <div class="FormFieldLayout__Container-sc-1m85c11-3 cDIlcj FieldContainer__FieldLayout-sc-gwguj-0 jrogik">
+                                            <label for="lvkzy70r" class="FormFieldLayout__Label-sc-1m85c11-0 eJtSxb">Diet
+                                                Types *</label>
+                                            <div class="choice__OptionsContainer-sc-1jj41hs-2 eKqndW"
+                                                 style="font-size: 15px; font-weight: normal; font-style: normal; color: rgb(17, 17, 17); grid-template-columns: 100%;">
+                                                <label class="choice-option__Label-sc-zyrt4i-0 cHDsud"><input
+                                                        id="yayuk8ve" type="checkbox" name="lvkzy70r" required=""
+                                                        class="choice-option__Input-sc-zyrt4i-7 Wzyen" value="Regular">
+                                                    <div class="choice-option__Container-sc-zyrt4i-1 kOrkiR">
+                                                        <div class="choice-option__Item-sc-zyrt4i-4 choice-option__ChoiceControl-sc-zyrt4i-6 dfrcBC fBeYtW">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                                <path fill-rule="evenodd"
+                                                                      d="M20.293 5.293a1 1 0 0 1 1.497 1.32l-.083.094L9.332 19.082a1 1 0 0 1-1.32.083l-.094-.083-5.625-5.625a1 1 0 0 1 1.32-1.497l.094.083 4.918 4.917L20.293 5.293Z"></path>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="choice-option__Overlay-sc-zyrt4i-2 lnIDrI"
+                                                             style="background-color: rgb(17, 17, 17);"></div>
+                                                    </div>
+                                                    <div class="choice-option__ItemLabel-sc-zyrt4i-3 bMhTrF"
+                                                         style="font-size: 15px; line-height: 24px; margin-left: 8px;">
+                                                        Regular
+                                                    </div>
+                                                </label><label class="choice-option__Label-sc-zyrt4i-0 cHDsud"><input
+                                                    id="twjpfkt4" type="checkbox" name="lvkzy70r" required=""
+                                                    class="choice-option__Input-sc-zyrt4i-7 Wzyen" value="Vegeterian">
+                                                <div class="choice-option__Container-sc-zyrt4i-1 kOrkiR">
+                                                    <div class="choice-option__Item-sc-zyrt4i-4 choice-option__ChoiceControl-sc-zyrt4i-6 dfrcBC fBeYtW">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                            <path fill-rule="evenodd"
+                                                                  d="M20.293 5.293a1 1 0 0 1 1.497 1.32l-.083.094L9.332 19.082a1 1 0 0 1-1.32.083l-.094-.083-5.625-5.625a1 1 0 0 1 1.32-1.497l.094.083 4.918 4.917L20.293 5.293Z"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="choice-option__Overlay-sc-zyrt4i-2 lnIDrI"
+                                                         style="background-color: rgb(17, 17, 17);"></div>
+                                                </div>
+                                                <div class="choice-option__ItemLabel-sc-zyrt4i-3 bMhTrF"
+                                                     style="font-size: 15px; line-height: 24px; margin-left: 8px;">
+                                                    Vegeterian
+                                                </div>
+                                            </label></div>
+                                        </div>
+                                    </div>
+                                    <div class="FieldsGrid__Row-sc-1luipcv-1 gRPRAW">
+                                        <div class="FormFieldLayout__Container-sc-1m85c11-3 cDIlcj FieldContainer__FieldLayout-sc-gwguj-0 jrogik">
+                                            <label for="lvl0a3r2" class="FormFieldLayout__Label-sc-1m85c11-0 eJtSxb">Specia
+                                                Types *</label>
+                                            <div class="choice__OptionsContainer-sc-1jj41hs-2 eKqndW"
+                                                 style="font-size: 15px; font-weight: normal; font-style: normal; color: rgb(17, 17, 17); grid-template-columns: 100%;">
+                                                <label class="choice-option__Label-sc-zyrt4i-0 cHDsud"><input
+                                                        id="yayuk8ve" type="checkbox" name="lvl0a3r2" required=""
+                                                        class="choice-option__Input-sc-zyrt4i-7 Wzyen" value="Option 1">
+                                                    <div class="choice-option__Container-sc-zyrt4i-1 kOrkiR">
+                                                        <div class="choice-option__Item-sc-zyrt4i-4 choice-option__ChoiceControl-sc-zyrt4i-6 dfrcBC fBeYtW">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                                <path fill-rule="evenodd"
+                                                                      d="M20.293 5.293a1 1 0 0 1 1.497 1.32l-.083.094L9.332 19.082a1 1 0 0 1-1.32.083l-.094-.083-5.625-5.625a1 1 0 0 1 1.32-1.497l.094.083 4.918 4.917L20.293 5.293Z"></path>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="choice-option__Overlay-sc-zyrt4i-2 lnIDrI"
+                                                             style="background-color: rgb(17, 17, 17);"></div>
+                                                    </div>
+                                                    <div class="choice-option__ItemLabel-sc-zyrt4i-3 bMhTrF"
+                                                         style="font-size: 15px; line-height: 24px; margin-left: 8px;">
+                                                        Option 1
+                                                    </div>
+                                                </label><label class="choice-option__Label-sc-zyrt4i-0 cHDsud"><input
+                                                    id="twjpfkt4" type="checkbox" name="lvl0a3r2" required=""
+                                                    class="choice-option__Input-sc-zyrt4i-7 Wzyen" value="Option 2">
+                                                <div class="choice-option__Container-sc-zyrt4i-1 kOrkiR">
+                                                    <div class="choice-option__Item-sc-zyrt4i-4 choice-option__ChoiceControl-sc-zyrt4i-6 dfrcBC fBeYtW">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                            <path fill-rule="evenodd"
+                                                                  d="M20.293 5.293a1 1 0 0 1 1.497 1.32l-.083.094L9.332 19.082a1 1 0 0 1-1.32.083l-.094-.083-5.625-5.625a1 1 0 0 1 1.32-1.497l.094.083 4.918 4.917L20.293 5.293Z"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="choice-option__Overlay-sc-zyrt4i-2 lnIDrI"
+                                                         style="background-color: rgb(17, 17, 17);"></div>
+                                                </div>
+                                                <div class="choice-option__ItemLabel-sc-zyrt4i-3 bMhTrF"
+                                                     style="font-size: 15px; line-height: 24px; margin-left: 8px;">
+                                                    Option 2
+                                                </div>
+                                            </label></div>
+                                        </div>
+                                    </div>
+                                    <div class="FieldsGrid__Row-sc-1luipcv-1 gRPRAW">
+                                        <div class="FormFieldLayout__Container-sc-1m85c11-3 TdkWv FieldContainer__FieldLayout-sc-gwguj-0 jrogik">
+                                            <label for="lvl01s4j" class="FormFieldLayout__Label-sc-1m85c11-0 eJtSxb">Cooking
+                                                Time *</label><span
+                                                class="TextMeasure__TextMeasureComponent-sc-bpafkg-0 ePiSec"></span>
+                                            <div class="TextControlBase__TextControlBaseContainer-sc-1s66zih-0 bBKQWp"
+                                                 style="padding: 10px 15px; border-width: 1px; border-radius: 4px; font-style: normal; font-weight: normal; font-size: 15px; line-height: 20px; border-color: rgba(17, 17, 17, 0.2); background: rgba(17, 17, 17, 0.1); color: rgb(17, 17, 17); opacity: 1;">
+                                                <div class="TextControlBase__TextControlBaseInner-sc-1s66zih-1 cjvHgB">
+                                                    <div class="TextControlBase__TextControlBaseInputWrapper-sc-1s66zih-3 ckjMpy"
+                                                         style="opacity: 1; transform: none;"><input id="lvl01s4j"
+                                                                                                     name="number"
+                                                                                                     aria-required="true"
+                                                                                                     placeholder=""
+                                                                                                     type="text"
+                                                                                                     autocomplete="off"
+                                                                                                     class="TextControlBase__TextControlBaseInput-sc-1s66zih-4 kJegGT"
+                                                                                                     value=""></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="FormFieldLayout__Container-sc-1m85c11-3 TdkWv FieldContainer__FieldLayout-sc-gwguj-0 jrogik">
+                                            <label for="lvl02por" class="FormFieldLayout__Label-sc-1m85c11-0 eJtSxb">Prep
+                                                Time *</label><span
+                                                class="TextMeasure__TextMeasureComponent-sc-bpafkg-0 ePiSec"></span>
+                                            <div class="TextControlBase__TextControlBaseContainer-sc-1s66zih-0 bBKQWp"
+                                                 style="padding: 10px 15px; border-width: 1px; border-radius: 4px; font-style: normal; font-weight: normal; font-size: 15px; line-height: 20px; border-color: rgba(17, 17, 17, 0.2); background: rgba(17, 17, 17, 0.1); color: rgb(17, 17, 17); opacity: 1;">
+                                                <div class="TextControlBase__TextControlBaseInner-sc-1s66zih-1 cjvHgB">
+                                                    <div class="TextControlBase__TextControlBaseInputWrapper-sc-1s66zih-3 ckjMpy"
+                                                         style="opacity: 1; transform: none;"><input id="lvl02por"
+                                                                                                     name="number"
+                                                                                                     aria-required="true"
+                                                                                                     placeholder=""
+                                                                                                     type="text"
+                                                                                                     autocomplete="off"
+                                                                                                     class="TextControlBase__TextControlBaseInput-sc-1s66zih-4 kJegGT"
+                                                                                                     value=""></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="FieldsGrid__Row-sc-1luipcv-1 gRPRAW">
+                                        <div class="FormFieldLayout__Container-sc-1m85c11-3 TdkWv FieldContainer__FieldLayout-sc-gwguj-0 jrogik">
+                                            <label for="lvl085zw" class="FormFieldLayout__Label-sc-1m85c11-0 eJtSxb">Calorie
+                                                *</label><span
+                                                class="TextMeasure__TextMeasureComponent-sc-bpafkg-0 ePiSec"></span>
+                                            <div class="TextControlBase__TextControlBaseContainer-sc-1s66zih-0 bBKQWp"
+                                                 style="padding: 10px 15px; border-width: 1px; border-radius: 4px; font-style: normal; font-weight: normal; font-size: 15px; line-height: 20px; border-color: rgba(17, 17, 17, 0.2); background: rgba(17, 17, 17, 0.1); color: rgb(17, 17, 17); opacity: 1;">
+                                                <div class="TextControlBase__TextControlBaseInner-sc-1s66zih-1 cjvHgB">
+                                                    <div class="TextControlBase__TextControlBaseInputWrapper-sc-1s66zih-3 ckjMpy"
+                                                         style="opacity: 1; transform: none;"><input id="lvl085zw"
+                                                                                                     name="number"
+                                                                                                     aria-required="true"
+                                                                                                     placeholder=""
+                                                                                                     type="text"
+                                                                                                     autocomplete="off"
+                                                                                                     class="TextControlBase__TextControlBaseInput-sc-1s66zih-4 kJegGT"
+                                                                                                     value=""></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="FormFieldLayout__Container-sc-1m85c11-3 TdkWv FieldContainer__FieldLayout-sc-gwguj-0 jrogik">
+                                            <label for="lvl08tpk" class="FormFieldLayout__Label-sc-1m85c11-0 eJtSxb">Serving
+                                                Size *</label><span
+                                                class="TextMeasure__TextMeasureComponent-sc-bpafkg-0 ePiSec"></span>
+                                            <div class="TextControlBase__TextControlBaseContainer-sc-1s66zih-0 bBKQWp"
+                                                 style="padding: 10px 15px; border-width: 1px; border-radius: 4px; font-style: normal; font-weight: normal; font-size: 15px; line-height: 20px; border-color: rgba(17, 17, 17, 0.2); background: rgba(17, 17, 17, 0.1); color: rgb(17, 17, 17); opacity: 1;">
+                                                <div class="TextControlBase__TextControlBaseInner-sc-1s66zih-1 cjvHgB">
+                                                    <div class="TextControlBase__TextControlBaseInputWrapper-sc-1s66zih-3 ckjMpy"
+                                                         style="opacity: 1; transform: none;"><input id="lvl08tpk"
+                                                                                                     name="number"
+                                                                                                     aria-required="true"
+                                                                                                     placeholder=""
+                                                                                                     type="text"
+                                                                                                     autocomplete="off"
+                                                                                                     class="TextControlBase__TextControlBaseInput-sc-1s66zih-4 kJegGT"
+                                                                                                     value=""></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="FieldsGrid__Row-sc-1luipcv-1 gRPRAW">
+                                        <div class="FormFieldLayout__Container-sc-1m85c11-3 cDIlcj FieldContainer__FieldLayout-sc-gwguj-0 jrogik">
+                                            <label for="lvl0dc3f" class="FormFieldLayout__Label-sc-1m85c11-0 eJtSxb">Tags </label><span
+                                                class="TextMeasure__TextMeasureComponent-sc-bpafkg-0 ePiSec"></span>
+                                            <div class="TextControlBase__TextControlBaseContainer-sc-1s66zih-0 bBKQWp"
+                                                 style="padding: 10px 15px; border-width: 1px; border-radius: 4px; font-style: normal; font-weight: normal; font-size: 15px; line-height: 20px; border-color: rgba(17, 17, 17, 0.2); background: rgba(17, 17, 17, 0.1); color: rgb(17, 17, 17); opacity: 1;">
+                                                <div class="TextControlBase__TextControlBaseInner-sc-1s66zih-1 cjvHgB">
+                                                    <div class="TextControlBase__TextControlBaseInputWrapper-sc-1s66zih-3 ckjMpy"
+                                                         style="opacity: 1; transform: none;"><input id="lvl0dc3f"
+                                                                                                     aria-required="false"
+                                                                                                     placeholder=""
+                                                                                                     type="shortText"
+                                                                                                     autocomplete="off"
+                                                                                                     class="TextControlBase__TextControlBaseInput-sc-1s66zih-4 kJegGT"
+                                                                                                     value=""></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="FieldsGrid__ButtonsGroup-sc-1luipcv-2 kBaLmY">
+                                    <button size="15" aria-label="Submit Application" type="button" tabindex="0"
+                                            class="ButtonBase__ButtonContainer-sc-p43e7i-3 euBiGU"
+                                            style="border-radius: 4px; border-color: rgba(0, 0, 0, 0); line-height: 1.32; color: rgb(255, 255, 255); font-family: inherit; font-weight: bold; font-size: 15px; font-style: normal; background-color: rgb(255, 56, 56); border-width: 2px;">
+                                        <span class="ButtonBase__Overlay-sc-p43e7i-4 cjTloD"
+                                              style="padding: 8px 21px; border-radius: calc(2px); background-color: rgba(0, 0, 0, 0);"><span
+                                                class="ButtonBase__Ellipsis-sc-p43e7i-5 dqiKFy">Submit Application</span></span>
+                                    </button>
+                                </div>
+                            </form>
+                            <a href="https://elfsight.com/online-form-builder/?utm_source=websites&amp;utm_medium=clients&amp;utm_content=form-builder&amp;utm_term=127.0.0.1&amp;utm_campaign=free-widget"
+                               target="_blank" rel="noreferrer"
+                               style="animation:none!important;background-color:rgba(238,238,238,0.9)!important;border:none!important;bottom:auto!important;color:rgba(0,0,0,.5)!important;display:inline-flex!important;align-items:center!important;gap:6px!important;float:none!important;height:28px!important;left:50%!important;margin:8px auto!important;opacity:1!important;padding:6px!important;position:relative!important;right:auto!important;top:auto!important;transform:translateX(-50%)!important;zoom:1!important;visibility:visible!important;box-sizing:border-box!important;border-radius:6px!important;font-family:Roboto,Arial,Sans-serif!important;font-size:12px!important;font-weight:700!important;line-height:16px!important;text-align:left!important;text-decoration:none!important;max-width:240px!important;text-indent:0!important;z-index:99999!important">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 26"
+                                     style="display:block!important;width:18px!important;height:18px!important;fill:currentColor!important">
+                                    <path d="M14.98.15c7.035.248 12.559 6.206 12.313 13.284-.246 7.077-6.169 12.633-13.203 12.386-7.035-.247-12.558-6.206-12.313-13.283.012-.34.029-.678.068-1.011.02-.17.283-1.455 1.431-1.302.861.115 1.133.873 1.07 1.45-.012.111-.037.404-.037.404-.016.181-.027.364-.034.547-.197 5.691 4.245 10.483 9.902 10.682 5.657.199 10.42-4.27 10.618-9.961.198-5.692-4.244-10.483-9.901-10.682a10.224 10.224 0 00-1.514.059l-.37.049s-1.48.246-1.809-.76c-.319-.972.426-1.535.93-1.64.92-.178 1.875-.256 2.85-.221zM1.412 1.162c.12 0 .231.033.328.09l13.466 6.944.119.061.05.026v.001c1.204.66 2 1.796 2 3.088l-.001.028.001 4.954v.786l.002.016a.66.66 0 01-.655.665.644.644 0 01-.307-.078l-3.129-1.583c-1.264-.596-2.124-1.72-2.136-3.01 0-.968-.153-2.093-1.693-3.427-.79-.685-1.708-1.483-2.642-2.297l-.701-.612a3239.267 3239.267 0 01-5.145-4.5l-.01-.008-.068-.079a.667.667 0 01.521-1.065z"></path>
+                                </svg>
+                                Free Online Form Builder
+                                <div title="Remove Elfsight logo"
+                                     style="display:flex!important;align-items:center!important;justify-content:center!important;border-radius:12px!important;box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2)!important;width:20px!important;height:20px!important;overflow:hidden!important;position:absolute!important;right:-10px!important;top:-10px!important;background:#f93262!important">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"
+                                         style="display:block!important;width:8px!important;height:8px!important;fill:#fff!important">
+                                        <path d="M6.01 5l3.78 3.78a.714.714 0 1 1-1.01 1.01L5 6.01 1.22 9.79A.714.714 0 1 1 .21 8.78L3.99 5 .21 1.22A.714.714 0 0 1 1.22.21L5 3.99 8.78.21a.714.714 0 0 1 1.01 1.01L6.01 5z"></path>
+                                    </svg>
+                                </div>
+                            </a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="eapps-widget-toolbar">
+
+
+    <div class="container mt-5" style="margin-bottom: 20px">
+   <form enctype="multipart/form-data" method="post" action="" novalidate="">
+    <input type="hidden" name="csrfmiddlewaretoken" value="lMUQ5F1gKRTUgx0B8jcauiEOJrF4UycezprK95ytbG9mxp2RuIWM17t6VJs0u48R">
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="id_name" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="id_name" name="name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="col-md-6">
+            <label for="id_photo" class="form-label">Photo:</label>
+            <input type="file" name="photo" accept="image/*" required="" id="id_photo">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="id_description" class="form-label">Description:</label>
+            <textarea name="description" cols="40" rows="10" required="" id="id_description"></textarea>
+        </div>
+        <div class="col-md-6">
+            <label for="id_how_to" class="form-label">How to:</label>
+            <textarea name="how_to" cols="40" rows="10" id="id_how_to"></textarea>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="id_cooking_time" class="form-label">Cooking Time:</label>
+            <input type="number" name="cooking_time" min="0" required="" id="id_cooking_time">
+        </div>
+        <div class="col-md-6">
+            <label for="id_prep_time" class="form-label">Prep Time:</label>
+            <input type="number" name="prep_time" value="0" min="0" required="" id="id_prep_time">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="id_categories" class="form-label">Categories:</label>
+            <select name="categories" required="" id="id_categories" multiple="">
+  <option value="1">Türk Mutfağı</option>
+
+  <option value="2">Ev yemekleri</option>
+
+</select>
+        </div>
+        <div class="col-md-6">
+            <label for="id_special_types" class="form-label">Special Types:</label>
+            <select name="special_types" required="" id="id_special_types" multiple="">
+  <option value="1">null</option>
+
+</select>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="id_tags" class="form-label">Tags:</label>
+            <input type="text" name="tags" maxlength="100" required="" id="id_tags">
+        </div>
+        <div class="col-md-6">
+            <label for="id_meal_types" class="form-label">Meal Types:</label>
+            <select name="meal_types" required="" id="id_meal_types" multiple="">
+  <option value="1">Kahvaltı</option>
+
+  <option value="2">Öğlen yemeği</option>
+
+  <option value="3">Akşam yemeği</option>
+
+</select>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="id_diet_types" class="form-label">Diet Types:</label>
+            <select name="diet_types" required="" id="id_diet_types" multiple="">
+  <option value="1">Vegan</option>
+
+  <option value="2">Normal</option>
+
+</select>
+        </div>
+        <div class="col-md-6">
+            <label for="id_calorie" class="form-label">Calorie:</label>
+            <input type="number" name="calorie" min="0" required="" id="id_calorie">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="id_serving_size" class="form-label">Serving Size:</label>
+            <input type="number" name="serving_size" min="0" required="" id="id_serving_size">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-danger">Bu Tarifi Ekle</button>
+</form>
+
+</div>
+
+
+
+ <!-- Similar Recipe Section Begin -->
+    <section class="similar-recipe spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="similar-item">
+                        <a href="#"><img src="/assets/static/web/img/cat-feature/small-7.jpg" alt=""></a>
+                        <div class="similar-text">
+                            <div class="cat-name">Vegan</div>
+                            <h6>Italian Tiramisu with Coffe</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="similar-item">
+                        <a href="#"><img src="/assets/static/web/img/cat-feature/small-6.jpg" alt=""></a>
+                        <div class="similar-text">
+                            <div class="cat-name">Vegan</div>
+                            <h6>Dry Cookies with Corn</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="similar-item">
+                        <a href="#"><img src="/assets/static/web/img/cat-feature/small-5.jpg" alt=""></a>
+                        <div class="similar-text">
+                            <div class="cat-name">Vegan</div>
+                            <h6>Asparagus with Pork Loin and Vegetables</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="similar-item">
+                        <a href="#"><img src="/assets/static/web/img/cat-feature/small-4.jpg" alt=""></a>
+                        <div class="similar-text">
+                            <div class="cat-name">Vegan</div>
+                            <h6>Smoked Salmon mini Sandwiches with Onion</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Similar Recipe Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="fs-left">
+                        <div class="logo">
+                            <a href="/home">
+                                <img src="/assets/static/web/img/footer-logo.png" alt="">
+                            </a>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                            viverra maecenas accumsan lacus vel facilisis.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 offset-lg-1">
+                    <form action="#" class="subscribe-form">
+                        <h3>Subscribe to our newsletter</h3>
+                        <input type="email" placeholder="Your e-mail">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a>
+                        <a href="#"><i class="fa-brands fa-pinterest"></i><span>Pinterest</span></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i><span>Facebook</span></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i><span>Twitter</span></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i><span>Youtube</span></a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search model -->
+	<div class="search-model">
+		<div class="h-100 d-flex align-items-center justify-content-center">
+			<div class="search-close-switch">+</div>
+			<form class="search-model-form">
+				<input type="text" id="search-input" placeholder="Search here.....">
+			</form>
+		</div>
+	</div>
+	<!-- Search model end -->
+
+
+
+<!-- Js Plugins -->
+    <script src="/assets/static/web/js/jquery-3.3.1.min.js"></script>
+    <script src="/assets/static/web/js/bootstrap.min.js"></script>
+    <script src="/assets/static/web/js/jquery.slicknav.js"></script>
+    <script src="/assets/static/web/js/jquery.nice-select.min.js"></script>
+    <script src="/assets/static/web/js/main.js"></script>
+    <script src="/assets/static/web/js/mixitup.min.js"></script>
+    <script src="/assets/static/web/js/login.js"></script>
+
+
+<script>
+        var showSigninButton = document.getElementById("show-signin-form");
+        var showSignupButton = document.getElementById("show-signin-form");
+        showSignupButton.innerText = "Show Sign In Form";
+        showSignupButton.classList.add("main-button");
+
+        showSigninButton.addEventListener("click", function () {
+            var signupForm = document.getElementById("signup-form");
+            var signinForm = document.getElementById("signin-form");
+            var sidebarHeading = document.querySelector("#sidebar-text h2");
+
+
+            if (signinForm.style.display === "none") {
+                signinForm.style.display = "block";
+                signupForm.style.display = "none";
+                showSigninButton.innerText = "Show Sign Up Form";
+                sidebarHeading.innerText = "Sign In";
+
+            } else {
+                signinForm.style.display = "none";
+                signupForm.style.display = "block";
+                showSigninButton.innerText = "Show Sign In Form";
+                sidebarHeading.innerText = "Sign Up";
+            }
+        });
+
+        showSigninButton.parentNode.insertBefore(showSignupButton, showSigninButton.nextSibling);
+    </script>
+
+
+
+<div><div id="portal-c43e4659-5a91-4274-92a8-064cdc5081fe" class="RootLayout__RootComponent-sc-1doisyz-0 iGDhJF eapps-form-builder-c43e4659-5a91-4274-92a8-064cdc5081fe-custom-css-hook"></div></div><textarea tabindex="-1" aria-hidden="true" style="min-height: 0px !important; max-height: none !important; height: 0px !important; visibility: hidden !important; overflow: hidden !important; position: absolute !important; z-index: -1000 !important; top: 0px !important; right: 0px !important; border-width: 0px; box-sizing: border-box; font-family: &quot;PT Sans&quot;, sans-serif; font-size: 15px; font-style: normal; font-weight: 400; letter-spacing: normal; line-height: 20px; padding: 0px; tab-size: 8; text-indent: 0px; text-rendering: auto; text-transform: none; width: 768px; word-break: normal;"></textarea></body>
