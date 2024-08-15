@@ -1,0 +1,152 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block title %}FoodMate | Recipe Details Page{% endblock title %}
+
+{% block content %}
+
+    <!-- Single Recipe Section Begin -->
+    <section class="single-page-recipe spad">
+        <div class="recipe-top">
+            <div style="text-align: center" class="container-fluid">
+                <div class="recipe-title">
+                    <span>~ {{ i_counter.get_ingredient_count }} malzeme / {{ c_recipe.prep_time | add:c_recipe.cooking_time }} dakika ~</span>
+                    <h2>{{ c_recipe.name }} </h2>
+                    <ul class="tags">
+                        <li>{{ c_recipe.get_all_categories_as_text }}</li>
+                        <li>{{ c_recipe.get_diet_type_as_text }}</li>
+{#                       <li>Spicy</li> <!-- special type eklenince eklenecek -->#}
+                    </ul>
+                </div>
+                <img src= "{{ c_recipe.photo.url }}" width="940" height="625" sty alt="">
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="ingredients-item">
+                        <div class="intro-item">
+{#                            <img src="img/intro-img.jpg" alt=""> profil photo#}
+                            <h2>{{ c_recipe.name }}</h2>
+{#                            <div class="rating">#}
+{#                                <i class="fa fa-star"></i>#}  <!-- begeni ozelligi eklenirse -->
+{#                                <i class="fa fa-star"></i>#}
+{#                                <i class="fa fa-star"></i>#}
+{#                                <i class="fa fa-star"></i>#}
+{#                                <i class="fa fa-star"></i>#}
+{#                            </div>#}
+{#                            <div class="reviews">4.9 from 25 reviews</div>#}
+                            <div class="recipe-time">
+                                <ul>
+                                    <li>Hazırlama Süresi: <span>{{ c_recipe.prep_time }} dakika</span></li>
+                                    <li>Pişirme Süresi: <span>{{ c_recipe.cooking_time }} dakika</span></li>
+                                    <li>Servis: <span>{{ c_recipe.serving_size }} Kişilik</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ingredient-list">
+                            <div class="recipe-btn">
+                                <a href="{% url 'add to shopping list' c_recipe.slug %}">Sepete Ekle</a>
+                                <a href="#" class="black-btn">Pin Recipe</a>
+                            </div>
+                            <div class="list-item">
+                                <h5>{{ c_recipe.name }} Tarifi İçin Malzemeler</h5>
+                                <div class="salad-list">
+{#                                    <h6>For the salad</h6>#}
+                                    <ul>
+                                         {% for ingredient in c_ingredients %}
+                                             <li>{{ ingredient.quantity|floatformat:"-1" }} {{ ingredient.unit }} {{ ingredient.ingredients }}</li>
+                                         {% endfor %}
+
+                                    </ul>
+                                </div>
+{#                                <div class="dressing-list">#}
+{#                                    <h6>For the dressing</h6>#}
+{#                                    <ul>#}
+{#                                        <li>1 brick of frozen udon</li>#}
+{#                                        <li>1/2 cup kimchi, plus a bit of kimchi juice</li>#}
+{#                                        <li>1 tablespoon of butter</li>#}
+{#                                        <li>1 sac of mentaiko</li>#}
+{#                                        <li>sliced green onions and nori, to finish</li>#}
+{#                                        <li>1 tablespoon of butter</li>#}
+{#                                        <li>1 sac of mentaiko</li>#}
+{#                                    </ul>#}
+{#                                </div>#}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nutrition-fact">
+                        <div class="nutri-title">
+                            <h6>Besin Değerleri</h6>
+                            <span>1 porsiyon</span>
+                        </div>
+                        <ul style="text-align: center">
+                            <li>Total Fat : 20.4g</li>
+                            <li>Cholesterol : 2%</li>
+                            <li>{{ c_recipe.calorie }} Kalori</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="recipe-right">
+                        <div class="recipe-desc">
+                            <h3>Açıklama</h3>
+                            <p>{{ c_recipe.description }}</p>
+
+                        </div>
+                        <div class="instruction-list">
+                            <h3>{{ c_recipe.name }} Tarifi Nasıl Yapılır?</h3>
+                            <ul>
+                                <li>
+                                    <span>01.</span>
+                                    {{ c_recipe.how_to }}
+                                </li>
+{#                                <li>#}
+{#                                    <span>02.</span>#}
+{#                                    Donec sit amet enim tortor. Sed egestas nulla nibh, vitae porta velit sagittis eget.#}
+{#                                    Donec vitae tellus semper, cursus sem id, iaculis purus. Aenean ligula risus,#}
+{##}
+{#                                </li>#}
+{#                                <li>#}
+{#                                    <span>03.</span>#}
+{#                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor#}
+{#                                    incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet. Donec in#}
+{#                                    sodales dui, a blandit nunc. Pellentesque id eros venenatis, sollicitudin neque#}
+{##}
+{#                                </li>#}
+{#                                <li>#}
+{#                                    <span>04.</span>#}
+{#                                    Donec sit amet enim tortor. Sed egestas nulla nibh, vitae porta velit sagittis eget.#}
+{#                                    Donec vitae tellus semper, cursus sem id, iaculis purus. Aenean ligula risus,#}
+{##}
+{#                                </li>#}
+                            </ul>
+                        </div>
+{#                        <div class="notes">#}
+{#                            <h3>Notes</h3>#}
+{#                            <div class="notes-item">#}
+{#                                <span>i</span>#}
+{#                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor#}
+{#                                    incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet. Donec in#}
+{#                                    sodales dui, a blandit nunc. Pellentesque id eros venenatis, sollicitudin neque#}
+{#                                    sodales, vehicula nibh. Nam massa odio, porttitor vitae efficitur non, ultricies#}
+{#                                    volutpat tellus. Cras egestas in lacus a finibus. Suspendisse sed urna at elit#}
+{#                                    condimentum viverra.</p>#}
+{#                            </div>#}
+{#                            <div class="notes-item">#}
+{#                                <span>i</span>#}
+{#                                <p>Donec in sodales dui, a blandit nunc. Pellentesque id eros venenatis, sollicitudin#}
+{#                                    neque sodales, vehicula nibh. Nam massa odio, porttitor vitae efficitur non,#}
+{#                                    ultricies volutpat tellus. Cras egestas in lacus a finibus. Suspendisse sed urna at#}
+{#                                    elit condimentum viverra.</p>#}
+{#                            </div>#}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Single Recipe Section End -->
+
+{% endblock content %}

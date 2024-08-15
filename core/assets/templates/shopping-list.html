@@ -1,0 +1,96 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block title %}FoodMate | Shopping List Page{% endblock title %}
+
+{% block content %}<!-- Bootstrap CSS yükleme -->
+
+<div class="container mt-5">
+    <div class="card shadow-sm mb-4">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h4 class="mb-0">Alışveriş Listem</h4>
+            <button class="btn btn-success" data-toggle="modal" data-target="#addItemModal">Ürün Ekle</button>
+        </div>
+        <div class="card-body">
+            {% if shopping_list_items %}
+                <ul class="list-group">
+                    {% for item in shopping_list_items %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span>{{ item.content }}</span>
+                            <div>
+                                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editItemModal{{ item.id }}">Düzenle</button>
+                                <a href="{% url 'remove_item' item_id=item.id %}" class="btn btn-danger btn-sm ml-2">Kaldır</a>
+                            </div>
+                        </li>
+
+                        <!-- Edit Item Modal -->
+                        <div class="modal fade" id="editItemModal{{ item.id }}" tabindex="-1" aria-labelledby="editItemModalLabel{{ item.id }}" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="editItemModalLabel{{ item.id }}">Düzenle</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form method="post" action="{% url 'edit_item' item.id %}">
+                                        {% csrf_token %}
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label for="edit_item_content{{ item.id }}">Ürün</label>
+                                                <input type="text" class="form-control" id="edit_item_content" name="edit_item_content" value="{{ item.content }}" required>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Vazgeç</button>
+                                            <button type="submit" class="btn btn-primary">Değişiklikleri Kaydet</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                                                <!-- Edit Item Modal End -->
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="text-muted">Your shopping list is empty. Start by adding some recipes!</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Add Item Modal -->
+<div class="modal fade" id="addItemModal" tabindex="-1" aria-labelledby="addItemModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addItemModalLabel">Ürün Ekle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" action="{% url 'shopping list' %}">
+                {% csrf_token %}
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="new_item">Ürün</label>
+                        <input type="text" class="form-control" id="new_item" name="new_item" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Vazgeç</button>
+                    <button type="submit" class="btn btn-primary">Ekle</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS ve jQuery yükleme -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock content %}

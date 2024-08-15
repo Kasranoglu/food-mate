@@ -1,0 +1,80 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block title %} Food Mate - SignIN\UP Page {% endblock title %}
+
+
+
+{% block content %}
+{% if messages %}
+                    <div class="message-container">
+                        {% for message in messages %}
+                            <div class="{% if message.tags == 'success' %}alert alert-success{% else %}alert alert-danger{% endif %}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+<div class="form-singin-up"  style="background-image: url('{% static 'web/img/pexels-engin-akyurt-1435895.jpg' %}');  background-color: rgba(0, 0, 0, 0.5);  background-image: url('{% static 'web/img/pexels-engin-akyurt-1435895.jpg' %}');
+    background-size: cover; /* Ekranı tam dolduracak şekilde boyutlandırma */
+    background-position: center; /* Orta hizalama */
+    position: relative; /* Konumlandırma için gerekli */">
+
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form id="signup-form" action="/signup" method="post">
+            {% csrf_token %}
+			<h1>Create Account</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fa-brands fa-facebook"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your email for registration</span>
+			<input name="fname" type="text" id="fname" placeholder="Name" />
+			<input name="lname" type="text" id="lname" placeholder="Surname" />
+            <input name="username" type="text" id="username" placeholder="Username" />
+            <input name="email" type="email" id="email" placeholder="Email" />
+			<input name="pass1" type="password" id="pass1" placeholder="Password" />
+            <input name="pass2" type="password" id="pass2" placeholder="Confirmation Password" />
+			<button type="submit" class="main-button">Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form id="signin-form" action="/signin" method="post">
+            {% csrf_token %}
+			<h1>Sign in</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your account</span>
+			<input name="username" type="text" id="username" placeholder="Username" />
+			<input name="pass1" type="password" id="pass1" placeholder="Password" />
+			<a href="#">Forgot your password?</a>
+			<button type="submit" class="main-button">Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</div>
+
+
+{% endblock content %}

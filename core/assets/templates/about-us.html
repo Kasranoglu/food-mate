@@ -1,0 +1,49 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block title %}FoodMate | About Us Page{% endblock title %}
+
+{% block content %}
+
+    <!-- About Me Section Begin -->
+    <section class="about-me spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="about-left">
+                        <img src="{{ content.main_photo.url }}" alt="">
+                        <div class="about-title">
+                            <span>{{ current_time|safe }}</span>
+                            <h2>{{ content.header_main }}</h2>
+                            <p>{{ content.text_main }}</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="about-right">
+                        <div class="sidebar">
+                            {% for recipe in recipes|slice:":7" %}
+                            <div class="sidebar-item">
+                                <a href="{% url 'recipe details' slug=recipe.slug %}"><img src="{{ recipe.photo.url }}" alt=""
+                                style width="99" height="75"></a>
+                                <div class="sidebar-item-text">
+                                    <div class="cat-name">{{ recipe.get_all_categories_as_text }}</div>
+                                    <h6>{{ recipe.name }}</h6>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="about-right-add set-bg" data-setbg="{% static 'web/img/about-right.jpg'%}">
+{#                            <h4>Buy my Cook Book</h4>#}
+                        </div>
+                    </div>
+                </div>
+          </div>
+        </div>
+    </section>
+    <!-- About Me Section End -->
+
+{% endblock content %}
+

@@ -1,0 +1,97 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container mt-5" style="margin-bottom: 20px">
+    <form enctype="multipart/form-data" method="post" action="" >
+    {% csrf_token %}
+    <div class="row mb-3">
+        <div class="col">
+            <label for="id_name" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="id_name" name="name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required="">
+        </div>
+        <div class="col">
+            <label for="id_photo" class="form-label">Photo:</label>
+            <input type="file" class="form-control" id="id_photo" name="photo" accept="image/*" required>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label for="id_description" class="form-label">Description:</label>
+            <textarea class="form-control" id="id_description" name="description" rows="4" required></textarea>
+        </div>
+        <div class="col">
+            <label for="id_how_to" class="form-label">How to:</label>
+            <textarea class="form-control" id="id_how_to" name="how_to" rows="4" required></textarea>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label for="id_cooking_time" class="form-label">Cooking Time:</label>
+            <input type="number" class="form-control" id="id_cooking_time" name="cooking_time" min="1" required>
+        </div>
+        <div class="col">
+            <label for="id_prep_time" class="form-label">Prep Time:</label>
+            <input type="number" class="form-control" id="id_prep_time" name="prep_time" min="0" required>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label for="id_tags" class="form-label">Tags:</label>
+            <input type="text" class="form-control" id="id_tags" name="tags" required>
+        </div>
+        <div class="col">
+            <label for="id_calorie" class="form-label">Calorie:</label>
+            <input type="number" class="form-control" id="id_calorie" name="calorie" min="1" required>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label for="id_categories" class="form-label">Categories:</label>
+            <select class="form-select" id="id_categories" name="categories" multiple required>
+                {% for category in categories %}
+                    <option value="{{ category.id }}">{{ category.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col">
+            <label for="id_special_types" class="form-label">Special Types:</label>
+            <select class="form-select" id="id_special_types" name="special_types" multiple required>
+                {% for special_type in special_types %}
+                    <option value="{{ special_type.id }}">{{ special_type.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label for="id_diet_types" class="form-label">Diet Types:</label>
+            <select class="form-select" id="id_diet_types" name="diet_types" multiple required>
+                {% for diet_type in diet_types %}
+                    <option value="{{ diet_type.id }}">{{ diet_type.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col">
+            <label for="id_meal_types" class="form-label">Meal Types:</label>
+            <select class="form-select" id="id_meal_types" name="meal_types" multiple required>
+                {% for meal_type in meal_types %}
+                    <option value="{{ meal_type.id }}">{{ meal_type.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label for="id_serving_size" class="form-label">Serving Size:</label>
+            <input type="number" class="form-control" id="id_serving_size" name="serving_size" min="1" required>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-danger">Malzemelerini ekle</button>
+</form>
+</div>
+{% endblock %}
+
+
+
